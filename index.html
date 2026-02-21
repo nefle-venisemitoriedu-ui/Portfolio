@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio Data Analyst</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+<style>
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f7f9fc;
+  color: #1c1c1c;
+  display: flex;
+}
+
+/* NAVIGATION VERTICALE */
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100vh;
+  background: #0d47a1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 15px;
+  box-shadow: 3px 0 15px rgba(0,0,0,0.1);
+}
+nav strong { color: #fff; font-size: 1.5rem; margin-bottom: 40px; display: block; text-align: center; }
+nav a { color: #fff; text-decoration: none; margin: 15px 0; font-weight: 600; display: flex; align-items: center; padding: 8px; border-radius: 8px; transition: 0.3s; }
+nav a i { margin-right: 10px; }
+nav a:hover { background: #1976d2; transform: translateX(5px); }
+
+/* MAIN CONTENT */
+main { margin-left: 220px; width: calc(100% - 220px); padding: 60px 5%; }
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+  color: white;
+  padding: 40px 5%;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+header h1 { font-size: 2rem; margin: 0; }
+.header-bottom { margin-top: 10px; font-size: 1.1rem; font-weight: 500; }
+.header-illustration { position: absolute; right: 20px; bottom: 20px; opacity: 0.15; font-size: 6rem; }
+
+/* SECTION TITRES */
+section h2 { color: #0d47a1; margin-bottom: 25px; border-left: 4px solid #0d47a1; padding-left: 10px; }
+
+/* CARDS */
+.card { background: white; border-left: 6px solid #0d47a1; padding: 25px; margin-bottom: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.card p, .card ul { font-size: 16px; line-height: 1.7; color: #333; }
+
+/* GRID */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+
+/* PROJECTS */
+.project-card { display: flex; align-items: center; gap: 20px; }
+.project-card img { width: 80px; height: 80px; border-radius: 8px; }
+.project-card-content h4 { margin: 0 0 8px 0; }
+.project-card-content p { margin: 2px 0; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 20px; margin-bottom: 50px; }
+.timeline-event { position: relative; margin-bottom: 30px; }
+
+/* CONTACT */
+.contact-box { text-align: left; display: flex; gap: 40px; }
+.contact-details, .contact-form { flex: 1; }
+.contact-form form { display: flex; flex-direction: column; }
+.contact-form input, .contact-form textarea { padding: 10px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; }
+.contact-form button { padding: 12px; background: #0d47a1; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.contact-form button:hover { background: #1976d2; }
+
+/* RESPONSIVE */
+@media(max-width: 1000px){
+  nav { width: 60px; padding: 20px 5px; }
+  nav a span { display: none; }
+  main { margin-left: 60px; width: calc(100% - 60px); padding: 30px 3%; }
+  .grid { grid-template-columns: 1fr; }
+  header { padding: 30px 20px; }
+  .header-illustration { font-size: 5rem; }
+  .contact-box { flex-direction: column; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <strong>Portfolio</strong>
+  <a href="#apropos"><i class="fas fa-user"></i><span>À propos</span></a>
+  <a href="#experience"><i class="fas fa-briefcase"></i><span>Expérience</span></a>
+  <a href="#formation"><i class="fas fa-graduation-cap"></i><span>Formation</span></a>
+  <a href="#competences"><i class="fas fa-cogs"></i><span>Compétences</span></a>
+  <a href="#projets"><i class="fas fa-lightbulb"></i><span>Projets</span></a>
+  <a href="#certifications"><i class="fas fa-certificate"></i><span>Certifications</span></a>
+  <a href="#vision"><i class="fas fa-lightbulb"></i><span>Vision</span></a>
+  <!-- AJOUT DU LIEN CONTACT -->
+  <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+</nav>
+
+<main>
+<header>
+  <h1>Portfolio – Data Analyst</h1>
+  <div class="header-bottom">
+    <strong>Nefle Venise MITORI</strong><br>
+    Analyse – Visualisation – Automatisation
+  </div>
+  <i class="fas fa-chart-line header-illustration"></i>
+</header>
+
+<!-- A PROPOS -->
+<section id="apropos">
+<h2>À propos</h2>
+<div class="card">
+<p>
+Passionnée par l’analyse de données, je transforme des informations complexes en outils concrets pour faciliter la prise de décision. Mon approche repose sur le nettoyage des données, l’automatisation via Python, l’intégration de sources multiples et la création de tableaux de bord opérationnels. Au quotidien, je veille à comprendre les besoins métier, garantir la qualité des données et concevoir des solutions fiables et durables. Je développe progressivement mes compétences en structuration et industrialisation des flux de données afin de contribuer à des environnements data robustes et performants.
+</p>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Expérience professionnelle</h2>
+<div class="timeline">
+  <div class="timeline-event card">
+    <h4>Data Analyst – VINCI Energies</h4>
+    <p>Octobre 2024 – Aujourd’hui</p>
+    <p><strong>Projet :</strong> Construction d’une Material Data Base</p>
+    <ul>
+      <li>Recueil des besoins métiers et définition des KPIs</li>
+      <li>Création de dashboards Power BI pour le suivi des catalogues</li>
+      <li>Scripts Python pour nettoyage et standardisation</li>
+      <li>Intégration de données multi-sources (SAP, SQL, Excel)</li>
+      <li>Structuration d’une base de données fiable</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- FORMATION -->
+<section id="formation">
+<h2>Formation académique</h2>
+<div class="card">
+<ul>
+<li><strong>Bachelor 3 – Chef de Projet Digital</strong><br>Spécialisation : analyse de données, transformation digitale, gestion de projet</li>
+<li><strong>Bachelor 1 & 2 – Parcours Data</strong><br>Statistiques, bases de données, analyse de données, IoT</li>
+<li><strong>Baccalauréat Scientifique</strong><br>Spécialisation : SVT – mathématiques • Mention Assez Bien</li>
+</ul>
+</div>
+</section>
+
+<!-- COMPETENCES -->
+<section id="competences">
+<h2>Compétences</h2>
+<div class="grid">
+  <div class="card"><h3>Langages</h3><ul><li>Python (Pandas, NumPy, Scikit-learn)</li><li>SQL (PostgreSQL, MySQL)</li><li>R</li><li>Scala</li><li>Java</li></ul></div>
+  <div class="card"><h3>Visualisation & BI</h3><ul><li>Power BI</li><li>Tableau</li><li>Matplotlib</li><li>Seaborn</li><li>Plotly</li></ul></div>
+  <div class="card"><h3>Machine Learning & Stats</h3><ul><li>Régression & classification</li><li>Séries temporelles</li><li>Clustering & NLP</li><li>A/B testing</li><li>Modélisation statistique</li></ul></div>
+  <div class="card"><h3>Outils de développement</h3><ul><li>Git, GitHub, GitLab</li><li>Jupyter Notebooks</li><li>VS Code, PyCharm</li><li>CI/CD pipelines</li><li>Agile / Scrum</li></ul></div>
+  <div class="card"><h3>Data Engineering & Gestion des données</h3><ul><li>Nettoyage & standardisation</li><li>Intégration multi-sources</li><li>Structuration de catalogues</li><li>Contrôle qualité des données</li><li>Gestion des doublons / Pipelines de transformation</li></ul></div>
+  <div class="card"><h3>Méthodologie & Collaboration</h3><ul><li>Analyse des besoins métier</li><li>Formalisation des spécifications</li><li>Travail avec équipes métiers</li><li>Documentation & traçabilité</li><li>Résolution de problèmes & Organisation</li></ul></div>
+</div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets">
+<h2>Projets</h2>
+<div class="card project-card">
+<img src="https://cdn-icons-png.flaticon.com/512/2910/2910767.png" alt="Dashboard illustration">
+<div class="project-card-content">
+<h4>Analyse des ventes e-commerce</h4>
+<p><strong>Contexte :</strong> Identifier les catégories de produits les plus vendues, les clients les plus fidèles, et les périodes hautes.</p>
+<p><strong>Compétences / Outils :</strong> Python (Pandas, Matplotlib)</p>
+<p><strong>Résultats :</strong> Dashboard interactif utilisé par 3 équipes</p>
+<p><strong>Lien / visuel :</strong> <span style="color: #1976d2;">[mettre ici le lien GitHub]</span></p>
+</div>
+</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+<h2>Certifications</h2>
+<div class="card">
+<ul>
+<li>Google Data Analytics — obtenu</li>
+<li>Microsoft Power BI Analyst — en cours</li>
+<li>Python for Data Analysis — en vue</li>
+<li>Google Cloud Data Engineer — en vue</li>
+</ul>
+</div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+<h2>Vision & objectifs</h2>
+<div class="card">
+<ul>
+<li>Renforcer mes compétences data engineering</li>
+<li>Industrialiser les pipelines</li>
+<li>Améliorer mon anglais</li>
+<li>Évoluer vers des projets data à impact</li>
+</ul>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="card contact-box">
+<div class="contact-details">
+<p>J'ai encore tant à partager : mes centres d’intérêt, mes compétences et ma manière de travailler. Si mon profil vous interpelle, je serais ravie d’échanger avec vous pour vous présenter mon parcours, ma vision et mes projets.</p>
+<p><strong>Adresse :</strong> Champigny Sur Marne, 94500</p>
+<p><strong>Téléphone :</strong> 07 83 04 05 78 </p>
+<p><strong>Email :</strong> venisemitori@gmail.com</p>
+<p><strong>LinkedIn :</strong> www.linkedin.com/in/nèfle-venise-mitori </p>
+</div>
+<div class="contact-form">
+<form action="https://formspree.io/f/mgolaqaj" method="POST">
+  <input type="text" name="nom" placeholder="Nom du recruteur / entreprise" required>
+  <input type="email" name="email" placeholder="Adresse email" required>
+  <textarea name="message" rows="4" placeholder="Votre message sur ma candidature" required></textarea>
+  <button type="submit">Envoyer</button>
+</form>
+</div>
+</div>
+</section>
+
+<footer>Portfolio Data — 2026</footer>
+</main>
+</body>
+</html>
